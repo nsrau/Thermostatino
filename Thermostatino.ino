@@ -10,6 +10,8 @@
 
    Library used: Nextion GitHub, DHT11
 
+   Nextion arduino : https://github.com/bborncr/nextion
+
 
    =======================================
 
