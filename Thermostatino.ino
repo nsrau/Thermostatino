@@ -12,7 +12,6 @@
 
    Nextion arduino : https://github.com/bborncr/nextion
 
-
    =======================================
 
    Material used:
