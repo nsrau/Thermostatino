@@ -61,7 +61,7 @@
     humdt       =>  humidity management, reads the humidity's values
 
     buttonState =>  it's necessary to create a state when is pressed the power button on the Nextion display
-    light       =>  it creates a state to limit to 0 the display brightness
+    bright       =>  it creates a state to limit to 0 the display brightness
 
     checkTheme  =>  it is used to organise the display's theme. It creates an interval
                     to examine which theme display in according to the setted values.
@@ -79,8 +79,8 @@ dht11 DHT;
 
 int temp, humdt; // see and decide if it is better float or int (int occupies less memory)
 
-int buttonState = false; // see and decide if it is better boolean or int
-int light = true; // see and decide if it is better boolean or int
+boolean buttonState = false; // see and decide if it is better boolean or int
+boolean bright = true; // see and decide if it is better boolean or int
 int checkTheme = 0;
 int timerPlus, timerMinus, chk;
 
@@ -296,7 +296,7 @@ void setup() {
 
     pinMode(5, OUTPUT); // relay temperature pin
     pinMode(6, OUTPUT); // buzzer pin
-    pinMode(7, OUTPUT); // light pin button for display Nextion
+    pinMode(7, OUTPUT); // bright pin button for display Nextion
 
     digitalWrite(5, HIGH); // relay pin - read power on because the jumper is setted to VCC / VCC
 
@@ -429,14 +429,14 @@ void loop() {
     }
 
     // check status button on the display
-    if (digitalRead(7) == HIGH && light == true) {
+    if (digitalRead(7) == HIGH && bright == true) {
 
-        light = false;
+        bright = false;
         myNextion.sendCommand("dims=0");
 
-    } else if (digitalRead(7) == HIGH && light == false) {
+    } else if (digitalRead(7) == HIGH && bright == false) {
 
-        light = true;
+        bright = true;
         myNextion.sendCommand("dims=100");
 
     }
