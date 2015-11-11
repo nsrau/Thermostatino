@@ -40,7 +40,6 @@
     #   I include the essential libraries for operating both Nextion display
     #   and temperature and humidity DHT11 sensor
     #
-    #
     #########
 */
 
