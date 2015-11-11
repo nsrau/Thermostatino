@@ -8,7 +8,7 @@
 
    Created date: 10/2015
 
-   Library used: Nextion GitHub, DHT11
+   Library used: Nextion arduino, DHT11
 
    Nextion arduino : https://github.com/bborncr/nextion
 
