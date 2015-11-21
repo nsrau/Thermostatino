@@ -19,7 +19,7 @@
    # 1 Nextion 2,4'
    # 1 Sensor DHT11
    # 1 Buzzer
-   # 2 resistenze 220h
+   # 2 resistances 220 ohm
    # 1 relay
    # 1 power button, 1 reset button
 
@@ -106,82 +106,82 @@ Nextion myNextion(nextion, 9600);
 
 void theme() {
 
-    if (temp >= 23 && humdt <= 65) {
+  if (temp >= 23 && humdt <= 65) {
 
-        /*
-            setting parameters of Nextion elements
-            in this case: "page0" image of the sun
+    /*
+        setting parameters of Nextion elements
+        in this case: "page0" image of the sun
 
-            set up the different images (see the names on the file to load on the Nextion)
-        */
+        set up the different images (see the names on the file to load on the Nextionp
+    */
 
-        myNextion.sendCommand("page0.pic=1");
-        myNextion.sendCommand("icons.pic=25");
-        myNextion.sendCommand("icon_timer.pic=10");
-        myNextion.sendCommand("temp.pic=17");
-        myNextion.sendCommand("humdt.pic=20");
+    myNextion.sendCommand("page0.pic=1");
+    myNextion.sendCommand("icons.pic=25");
+    myNextion.sendCommand("icon_timer.pic=10");
+    myNextion.sendCommand("temp.pic=17");
+    myNextion.sendCommand("humdt.pic=20");
 
-        /*
-            comprehend when to change the button power on the display
-        */
+    /*
+        comprehend when to change the button power on the display
+    */
 
-        if (buttonState == false) {
+    if (buttonState == false) {
 
-            myNextion.sendCommand("power.pic=7");
-            myNextion.sendCommand("power.pic2=28");
-
-        }
-
-        myNextion.sendCommand("timerView.pic=14");
-        myNextion.sendCommand("statusSensor.pic=23");
-
-    } else if (temp <= 5) {
-
-        /*
-            set "page0" image to winter
-        */
-
-        myNextion.sendCommand("page0.pic=2");
-        myNextion.sendCommand("icons.pic=26");
-        myNextion.sendCommand("icon_timer.pic=11");
-        myNextion.sendCommand("temp.pic=18");
-        myNextion.sendCommand("humdt.pic=21");
-
-        if (buttonState == false) {
-
-            myNextion.sendCommand("power.pic=8");
-            myNextion.sendCommand("power.pic2=29");
-
-        }
-
-        myNextion.sendCommand("timerView.pic=15");
-        myNextion.sendCommand("statusSensor.pic=24");
-
-    } else {
-
-        /*
-            set "page0" image to raindrops
-        */
-
-        myNextion.sendCommand("page0.pic=0");
-        myNextion.sendCommand("icons.pic=12");
-        myNextion.sendCommand("icon_timer.pic=9");
-        myNextion.sendCommand("temp.pic=16");
-        myNextion.sendCommand("humdt.pic=19");
-
-        if (buttonState == false) {
-
-            myNextion.sendCommand("power.pic=6");
-            myNextion.sendCommand("power.pic2=27");
-
-        }
-
-        myNextion.sendCommand("timerView.pic=13");
-        myNextion.sendCommand("statusSensor.pic=22");
+      myNextion.sendCommand("power.pic=7");
+      myNextion.sendCommand("power.pic2=28");
 
     }
 
-    return loop();
+    myNextion.sendCommand("timerView.pic=14");
+    myNextion.sendCommand("statusSensor.pic=23");
+
+  } else if (temp <= 5) {
+
+    /*
+        set "page0" image to winter
+    */
+
+    myNextion.sendCommand("page0.pic=2");
+    myNextion.sendCommand("icons.pic=26");
+    myNextion.sendCommand("icon_timer.pic=11");
+    myNextion.sendCommand("temp.pic=18");
+    myNextion.sendCommand("humdt.pic=21");
+
+    if (buttonState == false) {
+
+      myNextion.sendCommand("power.pic=8");
+      myNextion.sendCommand("power.pic2=29");
+
+    }
+
+    myNextion.sendCommand("timerView.pic=15");
+    myNextion.sendCommand("statusSensor.pic=24");
+
+  } else {
+
+    /*
+        set "page0" image to raindrops
+    */
+
+    myNextion.sendCommand("page0.pic=0");
+    myNextion.sendCommand("icons.pic=12");
+    myNextion.sendCommand("icon_timer.pic=9");
+    myNextion.sendCommand("temp.pic=16");
+    myNextion.sendCommand("humdt.pic=19");
+
+    if (buttonState == false) {
+
+      myNextion.sendCommand("power.pic=6");
+      myNextion.sendCommand("power.pic2=27");
+
+    }
+
+    myNextion.sendCommand("timerView.pic=13");
+    myNextion.sendCommand("statusSensor.pic=22");
+
+  }
+
+  return loop();
 
 }
 
@@ -191,28 +191,28 @@ void theme() {
 
 void button_Theme_On() {
 
-    /*
-        If the temperature is higher than or equal to 23°C
-        and if the humidity is lesser than or equal to 65°C
-        change theme to Sun
-    */
+  /*
+      If the temperature is higher than or equal to 23°C
+      and if the humidity is lesser than or equal to 65°C
+      change theme to Sun
+  */
 
-    if (temp >= 23 && buttonState == true && humdt <= 65) {
+  if (temp >= 23 && buttonState == true && humdt <= 65) {
 
-        myNextion.sendCommand("power.pic=4");
-        myNextion.sendCommand("power.pic2=31");
+    myNextion.sendCommand("power.pic=4");
+    myNextion.sendCommand("power.pic2=31");
 
-    } else if (temp <= 5 && buttonState == true) {
+  } else if (temp <= 5 && buttonState == true) {
 
-        myNextion.sendCommand("power.pic=5");
-        myNextion.sendCommand("power.pic2=32");
+    myNextion.sendCommand("power.pic=5");
+    myNextion.sendCommand("power.pic2=32");
 
-    } else {
+  } else {
 
-        myNextion.sendCommand("power.pic=3");
-        myNextion.sendCommand("power.pic2=30");
+    myNextion.sendCommand("power.pic=3");
+    myNextion.sendCommand("power.pic2=30");
 
-    }
+  }
 
 }
 
@@ -222,22 +222,22 @@ void button_Theme_On() {
 
 void button_Theme_Off() {
 
-    if (temp >= 23 && buttonState == false && humdt <= 65) {
+  if (temp >= 23 && buttonState == false && humdt <= 65) {
 
-        myNextion.sendCommand("power.pic=7");
-        myNextion.sendCommand("power.pic2=28");
+    myNextion.sendCommand("power.pic=7");
+    myNextion.sendCommand("power.pic2=28");
 
-    } else if (temp <= 5 && buttonState == false) {
+  } else if (temp <= 5 && buttonState == false) {
 
-        myNextion.sendCommand("power.pic=8");
-        myNextion.sendCommand("power.pic2=29");
+    myNextion.sendCommand("power.pic=8");
+    myNextion.sendCommand("power.pic2=29");
 
-    } else {
+  } else {
 
-        myNextion.sendCommand("power.pic=6");
-        myNextion.sendCommand("power.pic2=27");
+    myNextion.sendCommand("power.pic=6");
+    myNextion.sendCommand("power.pic2=27");
 
-    }
+  }
 
 }
 
@@ -247,12 +247,12 @@ void button_Theme_Off() {
 
 void buttonOn() {
 
-    digitalWrite(5, LOW);
-    buttonState = true;
-    // buzzer sound one = on
-    digitalWrite(6, HIGH);
-    delay(100);
-    digitalWrite(6, LOW);
+  digitalWrite(5, LOW);
+  buttonState = true;
+  // buzzer sound one = on
+  digitalWrite(6, HIGH);
+  delay(100);
+  digitalWrite(6, LOW);
 
 }
 
@@ -262,199 +262,199 @@ void buttonOn() {
 
 void buttonOff() {
 
-    digitalWrite(5, HIGH);
-    buttonState = false;
+  digitalWrite(5, HIGH);
+  buttonState = false;
 
-    /*
-        set the font color to RED for 6 seconds
-        and see the timer of the powered relay on the display
-    */
+  /*
+      set the font color to RED for 6 seconds
+      and see the timer of the powered relay on the display
+  */
 
-    myNextion.sendCommand("timerView.pco=RED");
-    // see if it is necessary to change with String (timerPlus – 1)
-    myNextion.setComponentText("timerView", String(timerPlus) + String("s"));
-    delay(6000);
-    myNextion.sendCommand("timerView.pco=WHITE");
-    myNextion.setComponentText("timerView", String("Timer"));
-    timerPlus = 0;
-    timerMinus = 0;
-    // it sounds twice = off
-    digitalWrite(6, HIGH);
-    delay(100);
-    digitalWrite(6, LOW);
-    delay(100);
-    digitalWrite(6, HIGH);
-    delay(100);
-    digitalWrite(6, LOW);
+  myNextion.sendCommand("timerView.pco=RED");
+  // see if it is necessary to change with String (timerPlus – 1)
+  myNextion.setComponentText("timerView", String(timerPlus) + String("s"));
+  delay(6000);
+  myNextion.sendCommand("timerView.pco=WHITE");
+  myNextion.setComponentText("timerView", String("Timer"));
+  timerPlus = 0;
+  timerMinus = 0;
+  // it sounds twice = off
+  digitalWrite(6, HIGH);
+  delay(100);
+  digitalWrite(6, LOW);
+  delay(100);
+  digitalWrite(6, HIGH);
+  delay(100);
+  digitalWrite(6, LOW);
 
 }
 
 void setup() {
 
-    Serial.begin(9600);
-    myNextion.init(); // send the initialising commands for Page 0
+  Serial.begin(9600);
+  myNextion.init(); // send the initialising commands for Page 0
 
-    pinMode(5, OUTPUT); // relay temperature pin
-    pinMode(6, OUTPUT); // buzzer pin
-    pinMode(7, OUTPUT); // bright pin button for display Nextion
+  pinMode(5, OUTPUT); // relay temperature pin
+  pinMode(6, OUTPUT); // buzzer pin
+  pinMode(7, OUTPUT); // bright pin button for display Nextion
 
-    digitalWrite(5, HIGH); // relay pin - read power on because the jumper is setted to VCC / VCC
+  digitalWrite(5, HIGH); // relay pin - read power on because the jumper is setted to VCC / VCC
 
 }
 
 void loop() {
 
-    String message = myNextion.listen(); //check for message
+  String message = myNextion.listen(); //check for message
 
-    if (message != "") { // if a message is received...
+  if (message != "") { // if a message is received...
 
-        Serial.println(message); //...print it out
+    Serial.println(message); //...print it out
 
-    }
+  }
 
-    // read temperature and humidity sensor
-    chk = DHT.read(DHT11_PIN);
+  // read temperature and humidity sensor
+  chk = DHT.read(DHT11_PIN);
 
-    switch (chk) {
+  switch (chk) {
 
-        case DHTLIB_OK:
-            temp = DHT.temperature;
-            humdt = DHT.humidity;
-            myNextion.setComponentText("statusSensor", "Read");
-            myNextion.setComponentText("temp", String(temp));
-            myNextion.setComponentText("humdt", String(humdt));
-            break;
-        case DHTLIB_ERROR_CHECKSUM:
-            myNextion.setComponentText("statusSensor", "Checksum error");
-            myNextion.setComponentText("temp", String("--"));
-            myNextion.setComponentText("humdt", String("--"));
-            break;
-        case DHTLIB_ERROR_TIMEOUT:
-            myNextion.setComponentText("statusSensor", "Time out error");
-            myNextion.setComponentText("temp", String("--"));
-            myNextion.setComponentText("humdt", String("--"));
-            break;
-        default:
-            myNextion.setComponentText("statusSensor", "Unknown error");
-            myNextion.setComponentText("temp", String("--"));
-            myNextion.setComponentText("humdt", String("--"));
-            break;
+    case DHTLIB_OK:
+      temp = DHT.temperature;
+      humdt = DHT.humidity;
+      myNextion.setComponentText("statusSensor", "Read");
+      myNextion.setComponentText("temp", String(temp));
+      myNextion.setComponentText("humdt", String(humdt));
+      break;
+    case DHTLIB_ERROR_CHECKSUM:
+      myNextion.setComponentText("statusSensor", "Checksum error");
+      myNextion.setComponentText("temp", String("--"));
+      myNextion.setComponentText("humdt", String("--"));
+      break;
+    case DHTLIB_ERROR_TIMEOUT:
+      myNextion.setComponentText("statusSensor", "Time out error");
+      myNextion.setComponentText("temp", String("--"));
+      myNextion.setComponentText("humdt", String("--"));
+      break;
+    default:
+      myNextion.setComponentText("statusSensor", "Unknown error");
+      myNextion.setComponentText("temp", String("--"));
+      myNextion.setComponentText("humdt", String("--"));
+      break;
 
-    }
+  }
 
-    if (message == "65 0 7 1 ffff ffff ffff" && buttonState == false) { // click power button on nextion
+  if (message == "65 0 7 1 ffff ffff ffff" && buttonState == false) { // click power button on nextion
 
-        button_Theme_On();
-        buttonOn();
-        // changing the status button, check theme
-        theme();
+    button_Theme_On();
+    buttonOn();
+    // changing the status button, check theme
+    theme();
 
-    } else if (message == "65 0 7 1 ffff ffff ffff" && buttonState == true) { // click power button on nextion
+  } else if (message == "65 0 7 1 ffff ffff ffff" && buttonState == true) { // click power button on nextion
 
-        // check button on
-        button_Theme_Off();
-        buttonOff();
-        // changing the status button, check theme
-        theme();
+    // check button on
+    button_Theme_Off();
+    buttonOff();
+    // changing the status button, check theme
+    theme();
 
-    }
+  }
 
-    /*
-        send from the Nextion to the serial the power relay with timer selected
-        from the page1 to display:
-        30min | 45min | 1hr | 2hr
+  /*
+      send from the Nextion to the serial the power relay with timer selected
+      from the page1 to display:
+      30min | 45min | 1hr | 2hr
 
-        send the id value (ex.: 65 1 1 0 ffff ffff ffff) from nextion to serial and read
-    */
+      send the id value (ex.: 65 1 1 0 ffff ffff ffff) from nextion to serial and read
+  */
 
-    if (message == "65 1 1 0 ffff ffff ffff" && buttonState == false) { // 30min
+  if (message == "65 1 1 0 ffff ffff ffff" && buttonState == true || message == "65 1 1 0 ffff ffff ffff" && buttonState == false) { // 30min
 
-         button_Theme_On();
-         buttonOn();
-         theme();
-         timerMinus = 1801;
+    button_Theme_On();
+    buttonOn();
+    theme();
+    timerMinus = 1801 - timerPlus;
 
-    } else if( message == "65 1 2 0 ffff ffff ffff" && buttonState == false) { // 45min
+  } else if ( message == "65 1 2 0 ffff ffff ffff" && buttonState == true || message == "65 1 2 0 ffff ffff ffff" && buttonState == false) { // 45min
 
-         button_Theme_On();
-         buttonOn();
-         theme();
-         timerMinus = 2701;
+    button_Theme_On();
+    buttonOn();
+    theme();
+    timerMinus = 2701 - timerPlus;
 
-    } else if (message == "65 1 3 0 ffff ffff ffff" && buttonState == false) { // 1hr
+  } else if (message == "65 1 3 0 ffff ffff ffff" && buttonState == true || message == "65 1 3 0 ffff ffff ffff" && buttonState == false) { // 1hr
 
-         button_Theme_On();
-         buttonOn();
-         theme();
-         timerMinus = 3601;
+    button_Theme_On();
+    buttonOn();
+    theme();
+    timerMinus = 3601 - timerPlus;
 
-    } else if (message == "65 1 4 0 ffff ffff ffff" && buttonState == false) { // 2hr
+  } else if (message == "65 1 4 0 ffff ffff ffff" && buttonState == true || message == "65 1 4 0 ffff ffff ffff" && buttonState == false) { // 2hr
 
-         button_Theme_On();
-         buttonOn();
-         theme();
-         timerMinus = 7201;
+    button_Theme_On();
+    buttonOn();
+    theme();
+    timerMinus = 7201 - timerPlus;
 
-    }
+  }
 
-    // check timer for power relay
-    if (digitalRead(5) == LOW) { // if relay is off
+  // check timer for power relay
+  if (digitalRead(5) == LOW) { // if relay is off
 
-        timerPlus++;
-        timerMinus--;
+    timerPlus++;
+    timerMinus--;
 
-        if (timerMinus < 0) { // if timer is to the minimum, you see timerPlus on the display
+    if (timerMinus < 0) { // if timer is to the minimum, you see timerPlus on the display
 
-            myNextion.setComponentText("timerView", String(timerPlus) + String("s"));
+      myNextion.setComponentText("timerView", String(timerPlus) + String("s"));
 
-        } else {
+    } else {
 
-            myNextion.setComponentText("timerView", String(timerMinus) + String("s"));
-
-        }
+      myNextion.setComponentText("timerView", String(timerMinus) + String("s"));
 
     }
 
-    /*
-        if timer is to 0 turn off the relay;
-        choose the maximum temperature to turn off the relay, on this case 24°C
-    */
+  }
 
-    if (timerMinus == 0 && digitalRead(5) == LOW || temp >= 24 && buttonState == true) {
+  /*
+      if timer is to 0 turn off the relay;
+      choose the maximum temperature to turn off the relay, on this case 24°C
+  */
 
-        button_Theme_Off();
-        buttonOff();
-        theme();
+  if (timerMinus == 0 && digitalRead(5) == LOW || temp >= 24 && buttonState == true) {
 
-    }
+    button_Theme_Off();
+    buttonOff();
+    theme();
 
-    // check status button on the display
-    if (digitalRead(7) == HIGH && bright == true) {
+  }
 
-        bright = false;
-        myNextion.sendCommand("dims=0");
+  // check status button on the display
+  if (digitalRead(7) == HIGH && bright == true) {
 
-    } else if (digitalRead(7) == HIGH && bright == false) {
+    bright = false;
+    myNextion.sendCommand("dims=0");
 
-        bright = true;
-        myNextion.sendCommand("dims=100");
+  } else if (digitalRead(7) == HIGH && bright == false) {
 
-    }
+    bright = true;
+    myNextion.sendCommand("dims=100");
 
-    /*
-        I create a timer to verify the theme every 255 seconds (4,25 min)
-        for no refresh continuously on the display
-    */
+  }
 
-    checkTheme++; // I increase for 4,25 min
+  /*
+      I create a timer to verify the theme every 255 seconds (4,25 min)
+      for no refresh continuously on the display
+  */
 
-    if (checkTheme == 255) {
+  checkTheme++; // I increase for 4,25 min
 
-        checkTheme = 0;
-        return theme();
+  if (checkTheme == 255) {
 
-    }
+    checkTheme = 0;
+    return theme();
 
-    delay(1000);
+  }
+
+  delay(1000);
 
 }
