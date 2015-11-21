@@ -27,7 +27,7 @@
    Nextion Display  | Relay         | DHT11         | Buzzer        | Button reset
                     |               |               |               |
    VCC  VCC         | VCC   VCC     | VCC   VCC     | VCC   6       | VCC   7
-   GRND GRND        | GRND  GRND    | GRND  GRND    | GRND  GRND    | GRND  GRND
+   GRND GRND        | GRND  GRND    | GRND  GRND    | GRND  GRND    | GRND  GRND(or 5v,check)
    TX   2           | PIN   5       | PIN   4       |               |
    RX   3           |               |               |               |
 
