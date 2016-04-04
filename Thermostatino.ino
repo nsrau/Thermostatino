@@ -77,7 +77,7 @@
 dht11 DHT;
 #define DHT11_PIN 4
 
-int temp, humdt; // see and decide if it is better float or int (int occupies less memory)
+int temp, humdt; // see and decide if it is better float or int
 
 boolean buttonState = false; // see and decide if it is better boolean or int
 boolean bright = true; // see and decide if it is better boolean or int
